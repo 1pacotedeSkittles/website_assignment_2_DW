@@ -27,6 +27,26 @@
 	width: fit-content;
 }
 
+.portfolio-nav ul{
+	margin-top:60px;
+	display:flex;
+	list-style: none;
+	padding:0;
+}
+
+.portfolio-nav a{
+	margin:20px;
+	text-decoration: none;
+	text-transform:lowercase;
+	color:black;
+}
+
 .portfolio-title:hover{
 	cursor: url("assets/fly.png"), auto;
+}
+
+.portfolio-nav a:hover{
+	cursor: url("assets/fly.png"), auto;
+	text-transform:uppercase;
+	margin:40px;
 }
