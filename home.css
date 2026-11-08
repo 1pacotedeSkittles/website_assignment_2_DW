@@ -47,6 +47,4 @@
 
 .portfolio-nav a:hover{
 	cursor: url("assets/fly.png"), auto;
-	text-transform:uppercase;
-	margin:40px;
 }
