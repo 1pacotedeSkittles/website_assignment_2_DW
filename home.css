@@ -49,9 +49,9 @@
 }
 
 .portfolio-title:hover{
-	cursor: url("assets/fly.png"), auto;
+	cursor: url("assets/fly.webp"), auto;
 }
 
 .portfolio-nav a:hover{
-	cursor: url("assets/fly.png"), auto;
+	cursor: url("assets/fly.webp"), auto;
 }
