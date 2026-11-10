@@ -1,0 +1,25 @@
+.about-nav{
+	display:grid;
+	grid-template-columns:1fr auto 1fr;
+	align-items:baseline;
+}
+
+.portfolio-title {
+    grid-column: 1; 
+}
+
+.about-nav ul{
+	grid-column: 2;
+	display:flex;
+	list-style: none;
+	padding:0;
+}
+
+.about-nav li{
+	margin:20px;
+}
+
+.about-nav a{
+	text-decoration: none;
+	color:black;
+}
