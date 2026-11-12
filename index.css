@@ -47,11 +47,3 @@
 	font-style: light;
 	color:black;
 }
-
-.portfolio-title:hover{
-	cursor: url("assets/fly.webp"), auto;
-}
-
-.portfolio-nav a:hover{
-	cursor: url("assets/fly.webp"), auto;
-}
