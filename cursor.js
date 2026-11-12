@@ -1,3 +1,11 @@
+const flyImg = document.createElement('img');
+flyImg.src = 'assets/fly.webp';
+flyImg.id = 'cursor-fly';
+flyImg.setAttribute('aria-hidden', 'true');
+flyImg.alt = '';
+
+document.body.appendChild(flyImg);
+
 const fly = document.getElementById('cursor-fly');
 const mamouscaLink = document.querySelector('.portfolio-title a');
 
