@@ -2,3 +2,9 @@
 	margin: 20vh 2vw 0vh 2vw;
 	font-family: "avenir-next-world", sans-serif;
 }
+
+.wow {
+display: inline-block;
+transform-origin: 50% 60%;
+cursor:pointer;
+}
