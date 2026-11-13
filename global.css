@@ -2,6 +2,10 @@
 	cursor: none;
 }
 
+.wow{
+	cursor: none;
+}
+
 #cursor-fly{
 	position:fixed;
 	width: 30px;
@@ -9,7 +13,7 @@
 	pointer-events: none;
 	transform: translate(-50%, -50%);
 	opacity: 0;
-	transition: opacity 0.1s ease;
+	transition: opacity 0.3s ease;
 	will-change:top, left, opacity;
 }
 
