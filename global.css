@@ -2,6 +2,27 @@
 	cursor:none;
 }
 
+:root {
+	--font-main: "avenir-next-world", sans-serif;
+	--font-serif: "source-serif-4-display", serif;
+	--page-margin-x: 2vw;
+	--hero-top: 20vh;
+}
+
+.hero {
+	margin: var(--hero-top) var(--page-margin-x) 0 var(--page-margin-x);
+	font-family: var(--font-main);
+}
+
+.hero-home{
+	min-height: 100dvh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: var(--font-serif);
+}
+
 #cursor-fly {
 	position: fixed;
 	width: 30px;
