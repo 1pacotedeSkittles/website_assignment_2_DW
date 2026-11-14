@@ -1,7 +1,5 @@
-.portfolio-title a,
-.wow,
-.who {
-	cursor: none;
+.portfolio-title a{
+	cursor:none;
 }
 
 #cursor-fly{
