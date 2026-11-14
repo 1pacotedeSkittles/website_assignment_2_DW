@@ -1,30 +1,17 @@
-const flyImg = document.createElement('img');
-flyImg.src = 'assets/fly.webp';
-flyImg.id = 'cursor-fly';
-flyImg.setAttribute('aria-hidden', 'true');
-flyImg.alt = '';
+const fly = document.createElement('img');
+fly.src = 'assets/fly.webp';
+fly.id = 'cursor-fly';
+fly.alt = '';
+fly.setAttribute('aria-hidden', 'true');
+document.body.appendChild(fly);
 
-document.body.appendChild(flyImg);
+const hoverTargets = '.portfolio-title a, .wow, .who';
 
-const fly = document.getElementById('cursor-fly');
-const mamouscaLink = document.querySelector('.portfolio-title a');
-const wowWord = document.querySelector('.wow');
-const whoWord = document.querySelector('.who');
-
-window.addEventListener('mousemove', (e) =>{
+window.addEventListener('mousemove', (e) => {
 	fly.style.left = `${e.clientX}px`;
 	fly.style.top = `${e.clientY}px`;
-})
+});
 
-mamouscaLink.addEventListener('mouseenter', () => fly.classList.add('active'));
-mamouscaLink.addEventListener('mouseleave', () => fly.classList.remove('active'));
-
-if (wowWord) {
-	wowWord.addEventListener('mouseenter', () => fly.classList.add('active'));
-	wowWord.addEventListener('mouseleave', () => fly.classList.remove('active'));
-}
-
-if (whoWord) {
-	whoWord.addEventListener('mouseenter', () => fly.classList.add('active'));
-	whoWord.addEventListener('mouseleave', () => fly.classList.remove('active'));
-}
+document.addEventListener('mouseover', (e) => {
+	fly.classList.toggle('active', !!e.target.closest(hoverTargets));
+});
