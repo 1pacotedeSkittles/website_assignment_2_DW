@@ -1,8 +1,6 @@
-.portfolio-title a {
-	cursor: none;
-}
-
-.wow{
+.portfolio-title a,
+.wow,
+.who {
 	cursor: none;
 }
 
@@ -27,6 +25,12 @@
 
 @view-transition {
   navigation: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	@view-transition {
+		navigation: none;
+	}
 }
 
 ::view-transition-old(root) {
