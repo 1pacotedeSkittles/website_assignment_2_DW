@@ -2,19 +2,19 @@
 	cursor:none;
 }
 
-#cursor-fly{
-	position:fixed;
+#cursor-fly {
+	position: fixed;
 	width: 30px;
 	z-index: 9999;
 	pointer-events: none;
 	transform: translate(-50%, -50%);
 	opacity: 0;
 	transition: opacity 0.3s ease;
-	will-change:top, left, opacity;
+	will-change: top, left, opacity;
 }
 
-#cursor-fly.active{
-	opacity:1;
+body:has(.portfolio-title a:hover) #cursor-fly {
+	opacity: 1;
 }
 
 .about-nav {
