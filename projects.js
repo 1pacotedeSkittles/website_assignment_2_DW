@@ -5,7 +5,10 @@ function createCard({ title, year, category, type, description, image }) {
   card.className = 'project-card';
 
   card.innerHTML = `
-    <img src="${image}" alt="${title}" loading="lazy">
+    <div class= project-media>
+        <img src="${image}" alt="${title}" loading="lazy">
+        <span class="project-overlay">See more</span>
+    </div>
     <h2>${title}</h2>
     <p class="project-info">${category} · ${type} · ${year}</p>
     <p>${description}</p>
