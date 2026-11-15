@@ -5,7 +5,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	font-family: var(--font-serif);
+	font-family: var(--font-title-navbar);
 }
 
 .portfolio-label,
