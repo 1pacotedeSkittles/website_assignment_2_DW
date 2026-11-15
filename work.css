@@ -1,0 +1,22 @@
+.projects {
+	list-style: none;
+	margin: 4rem 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 2rem;
+}
+
+.project-card img {
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	object-fit: scale-down;
+    object-position:left;
+}
+
+.project-info {
+	font-weight: 300;
+	text-transform: uppercase;
+	font-size: 0.8rem;
+	letter-spacing: 0.1em;
+}
