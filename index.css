@@ -1,51 +1,47 @@
-.portfolio-label,
-.portfolio-title{
-	margin:0;
-}
-
-.hero{
+.hero-home {
+	margin: 0;
 	min-height: 100dvh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	font-family: var("source-serif-4-display", serif);;
+	font-family: var(--font-serif);
 }
 
-.portfolio-label{
-	font-weight: 400;
-	font-style: normal;
+.portfolio-label,
+.portfolio-title {
+	margin: 0;
+}
+
+.portfolio-label {
 	font-size: 0.8rem;
+	font-weight: 400;
 	letter-spacing: 0.15em;
 	margin-bottom: 0.5rem;
 	text-align: center;
-	/*border: 1px solid black;*/
 }
 
-.portfolio-title a{
-	font-weight: 700;
-	font-style: bold;
+.portfolio-title a {
 	font-size: 2rem;
+	font-weight: 700;
 	letter-spacing: 0.05em;
 	text-decoration: none;
 	text-align: center;
-	/*border: 1px solid black;*/
 	width: fit-content;
-	color:black;
+	color: inherit;
 }
 
-.portfolio-nav ul{
-	margin-top:60px;
-	display:flex;
+.home-nav ul {
+	margin-top: 60px;
+	display: flex;
 	list-style: none;
-	padding:0;
+	padding: 0;
 }
 
-.portfolio-nav a{
-	margin:20px;
+.home-nav a {
+	margin: 20px;
 	text-decoration: none;
-	text-transform:lowercase;
+	text-transform: lowercase;
 	font-weight: 300;
-	font-style: light;
-	color:black;
+	color: inherit;
 }
