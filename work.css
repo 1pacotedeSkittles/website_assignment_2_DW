@@ -23,18 +23,25 @@
 .project-overlay {
 	position: absolute;
 	inset: 0;
-	display: grid;
-	place-items: center;
 	background: color-mix(in srgb, var(--secondary-color) 70%, transparent);
-	color: var(--background-color);
-	font-family: var(--font-text);
-	text-transform: uppercase;
-	letter-spacing: var(--tracking-wide);
 	opacity: 0;
 	transition: opacity 0.3s ease;
 }
 
-.project-media:hover .project-overlay {
+.project-overlay a{
+	color: var(--background-color);
+	font-family: var(--font-text);
+	text-transform: uppercase;
+	letter-spacing: var(--tracking-wide);
+	text-decoration: none;
+	display: grid;
+	place-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.project-media:hover .project-overlay,
+.project-media:focus-within .project-overlay {
 	opacity: 1;
 }
 
