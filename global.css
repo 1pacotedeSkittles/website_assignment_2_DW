@@ -106,6 +106,20 @@ body:has(.portfolio-title a:hover) #cursor-fly {
 	font-weight: var(--weight-light);
 }
 
+.page-aboutMe {
+	isolation: isolate;
+}
+
+.page-aboutMe::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+	background: url("assets/MAMOUSCA.webp") repeat;
+	background-size: 80px auto;
+	opacity: 0.15;
+	pointer-events: none;
+}
 @view-transition {
 	navigation: auto;
 }
