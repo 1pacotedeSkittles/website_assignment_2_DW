@@ -1,5 +1,4 @@
 .hero-home {
-	margin: 0;
 	min-height: 100dvh;
 	display: flex;
 	flex-direction: column;
@@ -19,6 +18,7 @@
 	letter-spacing: var(--tracking-wide);
 	margin-bottom: 0.5rem;
 	text-align: center;
+	color:var(--primary-color);
 }
 
 .portfolio-title a {
@@ -29,7 +29,6 @@
 	text-decoration: none;
 	text-align: center;
 	width: fit-content;
-	color: inherit;
 	animation: 
 			pulse 2.5s ease-in-out infinite,
 			color-cycle 2.5s linear infinite;
@@ -47,20 +46,20 @@
 	text-decoration: none;
 	text-transform: lowercase;
 	font-weight: var(weight-light);
-	color: inherit;
+	color: var(--primary-color);
 }
 
 .index-nav a:hover{
 	cursor: default;
-	color: #ffba08;
+	color: var(--secondary-color);
 }
 
 @keyframes pulse {
 	0%, 100% { transform: scale(1); }
-	45%, 55%      { transform: scale(2); }
+	50% { transform: scale(2); }
 }
 
 @keyframes color-cycle {
-	0%, 100%{ color: #03071e; }
-	45%, 55% { color: #ffba08; }
+	0%, 100%{ color: var(--primary-color); }
+	50% { color: var(--secondary-color); }
 }

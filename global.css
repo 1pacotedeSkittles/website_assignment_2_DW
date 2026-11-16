@@ -1,24 +1,30 @@
-.portfolio-title a{
-	cursor:none;
-}
-
 :root {
 	--font-text: "avenir-next-world", sans-serif;
 	--font-title-navbar: "source-serif-4-display", serif;
 	--weight-light: 300;
 	--weight-regular: 400;
 	--weight-bold: 700;
-	--text-small: 0.8rem;
+	--text-small: 1rem;
 	--text-nav: 1.5rem;
 	--text-title: 2rem;
 	--tracking-tight: 0.05em;
 	--tracking-wide: 0.15em;
 	--page-margin-x: 2vw;
+	--primary-color: rgb(25, 25, 112);
+	--secondary-color: rgb(54, 54, 242);
+	--background-color: rgb(255, 212, 212);
+}
+
+body{
+	margin:0;
+	padding:0;
+	background-color: var(--background-color);
 }
 
 .hero {
 	margin: 20vh var(--page-margin-x) 0 var(--page-margin-x);
 	font-family: var(--font-text);
+	color:var(--primary-color);
 }
 
 #cursor-fly {
@@ -36,21 +42,29 @@ body:has(.portfolio-title a:hover) #cursor-fly {
 	opacity: 1;
 }
 
-.page-nav a:hover{
+.portfolio-title a:hover{
+	color:var(--secondary-color);
+}
+
+.page-nav ul a:hover{
 	cursor: default;
-	color: #ffba08;
+	color: var(--secondary-color);
 }
 
 .page-work .page-nav ul li:nth-child(1) a{
-	color: #ffba08;
+	color: var(--secondary-color);
 }
 
 .page-aboutMe .page-nav ul li:nth-child(2) a{
-	color: #ffba08;
+	color: var(--secondary-color);
 }
 
 .page-contactMe .page-nav ul li:nth-child(3) a{
-	color: #ffba08;
+	color: var(--secondary-color);
+}
+
+.portfolio-title a{
+	cursor:none;
 }
 
 .page-nav {
@@ -84,7 +98,7 @@ body:has(.portfolio-title a:hover) #cursor-fly {
 }
 
 .page-nav a {
-	color: inherit;
+	color: var(--primary-color);
 	text-decoration: none;
 }
 
