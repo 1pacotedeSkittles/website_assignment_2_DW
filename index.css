@@ -22,6 +22,7 @@
 }
 
 .portfolio-title a {
+	display: inline-block;
 	font-size: var(--text-title);
 	font-weight: var(--weight-bold);
 	letter-spacing: var(--tracking-tight);
@@ -29,6 +30,9 @@
 	text-align: center;
 	width: fit-content;
 	color: inherit;
+	animation: 
+			pulse 2.5s ease-in-out infinite,
+			color-cycle 2.5s linear infinite;
 }
 
 .home-nav ul {
@@ -44,4 +48,14 @@
 	text-transform: lowercase;
 	font-weight: var(weight-light);
 	color: inherit;
+}
+
+@keyframes pulse {
+	0%, 100% { transform: scale(1); }
+	45%, 55%      { transform: scale(2); }
+}
+
+@keyframes color-cycle {
+	0%, 100%{ color: #03071e; }
+	45%, 55% { color: #ffba08; }
 }
