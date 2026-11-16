@@ -5,12 +5,19 @@
 :root {
 	--font-text: "avenir-next-world", sans-serif;
 	--font-title-navbar: "source-serif-4-display", serif;
+	--weight-light: 300;
+	--weight-regular: 400;
+	--weight-bold: 700;
+	--text-small: 0.8rem;
+	--text-nav: 1.5rem;
+	--text-title: 2rem;
+	--tracking-tight: 0.05em;
+	--tracking-wide: 0.15em;
 	--page-margin-x: 2vw;
-	--hero-top: 20vh;
 }
 
 .hero {
-	margin: var(--hero-top) var(--page-margin-x) 0 var(--page-margin-x);
+	margin: 20vh var(--page-margin-x) 0 var(--page-margin-x);
 	font-family: var(--font-text);
 }
 
@@ -40,9 +47,9 @@ body:has(.portfolio-title a:hover) #cursor-fly {
 
 .pages-nav .portfolio-title {
 	grid-column: 1;
-	font-size: 1.5rem;
-	font-weight: 700;
-	letter-spacing: 0.05em;
+	font-size: var(--text-nav);
+	font-weight: var(--weight-bold);
+	letter-spacing: var(--tracking-tight);
 	line-height: 1;
 	margin: 0;
 }
@@ -65,7 +72,7 @@ body:has(.portfolio-title a:hover) #cursor-fly {
 }
 
 .pages-nav ul a {
-	font-weight: 300;
+	font-weight: var(--weight-light);
 }
 
 @view-transition {
