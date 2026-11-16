@@ -35,19 +35,24 @@
 			color-cycle 2.5s linear infinite;
 }
 
-.home-nav ul {
+.index-nav ul {
 	margin-top: 60px;
 	display: flex;
 	list-style: none;
 	padding: 0;
 }
 
-.home-nav a {
+.index-nav a {
 	margin: 20px;
 	text-decoration: none;
 	text-transform: lowercase;
 	font-weight: var(weight-light);
 	color: inherit;
+}
+
+.index-nav a:hover{
+	cursor: default;
+	color: #ffba08;
 }
 
 @keyframes pulse {

@@ -29,11 +29,28 @@
 	transform: translate(-50%, -50%);
 	opacity: 0;
 	transition: opacity 0.3s ease;
-	will-change: top, left, opacity;
+	will-change: opacity;
 }
 
 body:has(.portfolio-title a:hover) #cursor-fly {
 	opacity: 1;
+}
+
+.page-nav a:hover{
+	cursor: default;
+	color: #ffba08;
+}
+
+.page-work .page-nav ul li:nth-child(1) a{
+	color: #ffba08;
+}
+
+.page-aboutMe .page-nav ul li:nth-child(2) a{
+	color: #ffba08;
+}
+
+.page-contactMe .page-nav ul li:nth-child(3) a{
+	color: #ffba08;
 }
 
 .page-nav {
