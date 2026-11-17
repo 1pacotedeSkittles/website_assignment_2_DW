@@ -131,6 +131,13 @@ body:has(.portfolio-title a:hover) #cursor-fly {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 		gap: 1.5rem 2rem;
+
+		@media (max-width: 768px) {
+			grid-template-columns: 1fr;
+			dd{
+				text-decoration:underline;
+			}
+		}
 	}
 
 	dt {
