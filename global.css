@@ -5,7 +5,7 @@
 	--weight-regular: 400;
 	--weight-bold: 700;
 	--text-small: 1rem;
-	--text-nav: 1.5rem;
+	--text-nav: 1.1rem;
 	--text-title: 2rem;
 	--tracking-tight: 0.05em;
 	--tracking-wide: 0.15em;
@@ -73,6 +73,7 @@ body:has(.portfolio-title a:hover) #cursor-fly {
 	grid-template-columns: 1fr auto 1fr;
 	align-items: end;
 	font-family: var(--font-title-navbar);
+	font-size: var(--text-nav);
 	margin: 2vh var(--page-margin-x) 0;
 }
 
