@@ -28,7 +28,7 @@
 	transition: opacity 0.3s ease;
 }
 
-.project-overlay a{
+.project-overlay .project-more{
 	cursor: default;
 	color: var(--background-color);
 	font-family: var(--font-text);
@@ -44,6 +44,13 @@
 .project-media:hover .project-overlay,
 .project-media:focus-within .project-overlay {
 	opacity: 1;
+}
+
+.project-overlay .project-more,
+.project-overlay .project-more:hover,
+.project-overlay .project-more:focus-visible {
+	background: none;
+	color: var(--background-color);
 }
 
 .project-info {
@@ -63,7 +70,68 @@
 	margin: 0;
 }
 
-.project-more {
+.project-dialog {
+	width: min(90vw, 640px);
+	padding: 2rem;
+	background: color-mix(in srgb, var(--background-color) 90%, transparent);;
+	color: var(--primary-color);
+	border:none;
+}
+
+.dialog-close{
+	color:var(--primary-color);
+	background:none;
+	border:none;
+	margin:0;
+}
+
+.slider {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+.slider-track {
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	min-width: 0;
+}
+
+.slider-track::-webkit-scrollbar {
+	display: none;
+}
+
+
+.slider-track img {
+	flex: 0 0 100%;
+	width: 100%;
+	max-height: 60vh;
+	object-fit: contain;
+	scroll-snap-align: start;
+}
+
+.slider-btn {
+	background-color:var(--primary-color);
+	border:none;
+	padding: 0.5rem;
+	cursor: default;
+	flex-shrink: 0;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+}
+
+.dialog-close:hover{
+	color:var(--secondary-color);
+}
+
+.slider-btn:hover {
+	background-color :var(--secondary-color);
+}
+
+.project-head .project-more {
 	display: none;
 }
 
@@ -72,7 +140,7 @@
 		display: none;
 	}
 
-	.project-more {
+	.project-head .project-more {
 		display: inline-block;
 		margin-left: auto;
 		font-size: var(--text-small);
@@ -80,5 +148,7 @@
 		letter-spacing: var(--tracking-tight);
 		color: var(--primary-color);
 		text-decoration: underline;
+		background:none;
+		border:none;
 	}
 }
