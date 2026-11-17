@@ -7,50 +7,29 @@
 	gap: 2rem;
 }
 
-.project-media {
-	position: relative;
-	aspect-ratio: 4 / 3;
-	overflow: hidden;
-}
+.project-head {
+	display: flex;
+	align-items: baseline;
+	gap: 1rem;
 
-.project-media img {
-	display: block;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
+	h2 {
+		margin: 0;
+	}
 
-.project-overlay {
-	position: absolute;
-	inset: 0;
-	background: color-mix(in srgb, var(--secondary-color) 70%, transparent);
-	opacity: 0;
-	transition: opacity 0.3s ease;
-}
-
-.project-overlay .project-more{
-	cursor: default;
-	color: var(--background-color);
-	font-family: var(--font-text);
-	text-transform: uppercase;
-	letter-spacing: var(--tracking-wide);
-	text-decoration: none;
-	display: grid;
-	place-items: center;
-	width: 100%;
-	height: 100%;
-}
-
-.project-media:hover .project-overlay,
-.project-media:focus-within .project-overlay {
-	opacity: 1;
-}
-
-.project-overlay .project-more,
-.project-overlay .project-more:hover,
-.project-overlay .project-more:focus-visible {
-	background: none;
-	color: var(--background-color);
+	.project-more {
+		display: none;
+		@media (max-width: 768px), (hover: none) {
+			display: inline-block;
+			margin-left: auto;
+			font-size: var(--text-small);
+			text-transform: lowercase;
+			letter-spacing: var(--tracking-tight);
+			color: var(--primary-color);
+			text-decoration: underline;
+			background:none;
+			border:none;
+		}
+	}
 }
 
 .project-info {
@@ -60,14 +39,53 @@
 	letter-spacing: var(--tracking-tight);
 }
 
-.project-head {
-	display: flex;
-	align-items: baseline;
-	gap: 1rem;
+.project-media {
+	position: relative;
+	aspect-ratio: 4 / 3;
+	overflow: hidden;
+
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&:hover .project-overlay,
+	&:focus-within .project-overlay{
+		opacity: 1;
+	}
 }
 
-.project-head h2 {
-	margin: 0;
+.project-overlay {
+	position: absolute;
+	inset: 0;
+	background: color-mix(in srgb, var(--secondary-color) 70%, transparent);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+
+	@media (max-width: 768px), (hover: none) {
+		display:none;
+	}
+
+	.project-more{
+		cursor: default;
+		color: var(--background-color);
+		font-family: var(--font-text);
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-wide);
+		text-decoration: none;
+		display: grid;
+		place-items: center;
+		width: 100%;
+		height: 100%;
+		
+		&:hover,
+		&:focus-visible{
+			background: none;
+			color: var(--background-color);
+		}
+	}
 }
 
 .project-dialog {
@@ -76,6 +94,10 @@
 	background: color-mix(in srgb, var(--background-color) 90%, transparent);;
 	color: var(--primary-color);
 	border:none;
+
+	@media (max-width: 768px), (hover: none) {
+		width: max(50vw);
+	}
 }
 
 .dialog-close{
@@ -83,6 +105,10 @@
 	background:none;
 	border:none;
 	margin:0;
+
+	&:hover{
+		color:var(--secondary-color);
+	}
 }
 
 .slider {
@@ -97,19 +123,22 @@
 	overflow-x: auto;
 	scroll-snap-type: x mandatory;
 	min-width: 0;
+
+	&::-webkit-scrollbar {
+		display:none;
+	}
+
+	img {
+		flex: 0 0 100%;
+		width: 100%;
+		max-height: 60vh;
+		object-fit: contain;
+		scroll-snap-align: start;
+	}
 }
 
 .slider-track::-webkit-scrollbar {
 	display: none;
-}
-
-
-.slider-track img {
-	flex: 0 0 100%;
-	width: 100%;
-	max-height: 60vh;
-	object-fit: contain;
-	scroll-snap-align: start;
 }
 
 .slider-btn {
@@ -121,47 +150,14 @@
 	border-radius: 50%;
 	width: 40px;
 	height: 40px;
-}
-
-.dialog-close:hover{
-	color:var(--secondary-color);
-}
-
-.slider-btn:hover {
-	background-color :var(--secondary-color);
-}
-
-.project-head .project-more {
-	display: none;
-}
-
-@media (max-width: 768px), (hover: none) {
-	.project-overlay {
-		display: none;
+	&:hover{
+		background-color :var(--secondary-color);
 	}
-
-	.project-head .project-more {
-		display: inline-block;
-		margin-left: auto;
-		font-size: var(--text-small);
-		text-transform: lowercase;
-		letter-spacing: var(--tracking-tight);
-		color: var(--primary-color);
-		text-decoration: underline;
-		background:none;
-		border:none;
-	}
-
-	.project-dialog {
-	width: max(50vw);
-	padding: 2rem;
-	background: color-mix(in srgb, var(--background-color) 90%, transparent);;
-	color: var(--primary-color);
-	border:none;
-	}
-
+	
+	@media (max-width: 768px), (hover: none) {
 	.slider-btn{
-		width:30px;
-		height:30px;
+			width:30px;
+			height:30px;
+		}
 	}
 }
