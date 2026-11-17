@@ -25,32 +25,41 @@ const dialogTitle = dialog.querySelector('.dialog-title');
 const dialogInfo = dialog.querySelector('.dialog-info');
 const dialogDescription = dialog.querySelector('.dialog-description');
 
-function createCard({ title, year, category, type, description, image },index) {
-const card = document.createElement('li');
-card.className = 'project-card';
+function createCard({ title, year, category, type, description, image }, index) {
+	const card = document.createElement('li');
+	card.className = 'project-card';
 
-card.innerHTML = `
-	<div class= "project-media">
-		<img src="${image}" alt="${title}" loading="lazy">
-		<div class="project-overlay">
-		<button class="project-more" type="button" data-index="${index}">See more</button>
+	card.innerHTML = `
+		<div class="project-media">
+			<img src="${image}" alt="${title}" loading="lazy">
+			<div class="project-overlay">
+				<button class="project-more" type="button" data-index="${index}">See more</button>
+			</div>
 		</div>
-	</div>
-	<div class = "project-head">
-		<h2>${title}</h2>
-		<button class="project-more" type="button" data-index="${index}">See more</button>
-	</div>
-	<p class="project-info">${category} · ${type} · ${year}</p>
-	<p>${description}</p>
-`;
-return card;
+		<div class="project-head">
+			<h2>${title}</h2>
+			<button class="project-more" type="button" data-index="${index}">See more</button>
+		</div>
+		<p class="project-info">${category} · ${type} · ${year}</p>
+		<p>${description}</p>
+	`;
+	return card;
+}
+
+function updateSliderButtons() {
+	const noScroll = track.scrollWidth <= track.clientWidth;
+	const atStart = track.scrollLeft <= 0;
+	const atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
+
+	prevBtn.style.visibility = noScroll || atStart ? 'hidden' : 'visible';
+	nextBtn.style.visibility = noScroll || atEnd ? 'hidden' : 'visible';
 }
 
 function openProject(index) {
-	const project = projects[index];
-	const { title, year, category, type, description, image, images = [image] } = projects[index];
+	const { title, year, category, type, description, image, images } = projects[index];
+	const gallery = Array.isArray(images) ? images : [image];
 
-	track.replaceChildren(...images.map((src) => {
+	track.replaceChildren(...gallery.map((src) => {
 		const img = document.createElement('img');
 		img.src = src;
 		img.alt = title;
@@ -58,36 +67,17 @@ function openProject(index) {
 	}));
 	track.scrollTo({ left: 0 });
 
-	dialogTitle.textContent = project.title;
-	dialogInfo.textContent = `${project.category} · ${project.type} · ${project.year}`;
-	dialogDescription.textContent = project.description;
+	dialogTitle.textContent = title;
+	dialogInfo.textContent = `${category} · ${type} · ${year}`;
+	dialogDescription.textContent = description;
 
 	dialog.showModal();
-
-	setTimeout(updateSliderButtons, 10);
-}
-
-function updateSliderButtons() {
-	if (track.scrollWidth <= track.clientWidth) {
-		prevBtn.style.visibility = 'hidden';
-		nextBtn.style.visibility = 'hidden';
-		return;
-	}
-	if (track.scrollLeft <= 0) {
-		prevBtn.style.visibility = 'hidden';
-	} else {
-		prevBtn.style.visibility = 'visible';
-	}
-	if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 1) {
-		nextBtn.style.visibility = 'hidden';
-	} else {
-		nextBtn.style.visibility = 'visible';
-}
+	requestAnimationFrame(updateSliderButtons);
 }
 
 list.addEventListener('click', (e) => {
 	const button = e.target.closest('.project-more');
-	if (button) openProject(button.dataset.index);
+	if (button) openProject(Number(button.dataset.index));
 });
 
 dialog.addEventListener('click', (e) => {

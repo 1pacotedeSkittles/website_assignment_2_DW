@@ -7,6 +7,7 @@
 	gap: 2rem;
 }
 
+/* ---------- Cards ---------- */
 .project-head {
 	display: flex;
 	align-items: baseline;
@@ -18,16 +19,20 @@
 
 	.project-more {
 		display: none;
+
 		@media (max-width: 768px), (hover: none) {
 			display: inline-block;
 			margin-left: auto;
+			padding: 0;
+			font: inherit;
 			font-size: var(--text-small);
 			text-transform: lowercase;
 			letter-spacing: var(--tracking-tight);
 			color: var(--primary-color);
 			text-decoration: underline;
-			background:none;
-			border:none;
+			background: none;
+			border: 0;
+			cursor: default;
 		}
 	}
 }
@@ -52,36 +57,39 @@
 	}
 
 	&:hover .project-overlay,
-	&:focus-within .project-overlay{
+	&:focus-within .project-overlay {
 		opacity: 1;
 	}
 }
 
 .project-overlay {
 	position: absolute;
+	font-family:var(--font-text);
 	inset: 0;
 	background: color-mix(in srgb, var(--secondary-color) 70%, transparent);
 	opacity: 0;
 	transition: opacity 0.3s ease;
 
 	@media (max-width: 768px), (hover: none) {
-		display:none;
+		display: none;
 	}
 
-	.project-more{
-		cursor: default;
-		color: var(--background-color);
-		font-family: var(--font-text);
-		text-transform: uppercase;
-		letter-spacing: var(--tracking-wide);
-		text-decoration: none;
+	.project-more {
 		display: grid;
 		place-items: center;
 		width: 100%;
 		height: 100%;
-		
+		padding: 0;
+		background: none;
+		border: 0;
+		color: var(--background-color);
+		font: inherit;
+		text-transform: uppercase;
+		letter-spacing: var(--tracking-wide);
+		cursor: default;
+
 		&:hover,
-		&:focus-visible{
+		&:focus-visible {
 			background: none;
 			color: var(--background-color);
 		}
@@ -90,27 +98,46 @@
 
 .project-dialog {
 	width: min(90vw, 640px);
+	max-height: 90dvh;
+	overflow-y: auto;
 	padding: 2rem;
-	background: color-mix(in srgb, var(--background-color) 90%, transparent);;
+	background: color-mix(in srgb, var(--background-color) 90%, transparent);
 	color: var(--primary-color);
-	border:none;
+	font-family: var(--font-text);
+	border: none;
 
 	@media (max-width: 768px), (hover: none) {
-		width: max(50vw);
+		width: 90vw;
 	}
 }
 
-.dialog-close{
-	color:var(--primary-color);
-	background:none;
-	border:none;
-	margin:0;
+.project-dialog::backdrop {
+	background: color-mix(in srgb, var(--secondary-color) 70%, transparent);
+}
 
-	&:hover{
-		color:var(--secondary-color);
+body:has(dialog[open]) {
+	overflow: hidden;
+}
+
+.dialog-close {
+	display: block;
+	margin: 0 0 1rem auto;
+	padding: 0;
+	font: inherit;
+	font-size: var(--text-small);
+	color: var(--primary-color);
+	background: none;
+	border: none;
+	cursor: default;
+	transition: color 0.3s ease;
+
+	&:hover,
+	&:focus-visible {
+		color: var(--secondary-color);
 	}
 }
 
+/* ---------- Slider ---------- */
 .slider {
 	display: flex;
 	align-items: center;
@@ -120,13 +147,12 @@
 
 .slider-track {
 	display: flex;
+	flex: 1;
+	min-width: 0;
 	overflow-x: auto;
 	scroll-snap-type: x mandatory;
-	min-width: 0;
-
-	&::-webkit-scrollbar {
-		display:none;
-	}
+	scrollbar-width: none;
+	overscroll-behavior-x: contain;
 
 	img {
 		flex: 0 0 100%;
@@ -137,27 +163,33 @@
 	}
 }
 
-.slider-track::-webkit-scrollbar {
-	display: none;
-}
-
 .slider-btn {
-	background-color:var(--primary-color);
-	border:none;
-	padding: 0.5rem;
-	cursor: default;
 	flex-shrink: 0;
-	border-radius: 50%;
 	width: 40px;
 	height: 40px;
-	&:hover{
-		background-color :var(--secondary-color);
+	padding: 0;
+	border: none;
+	border-radius: 50%;
+	background-color: var(--primary-color);
+	color: var(--background-color);
+	font: inherit;
+	cursor: default;
+
+	&[data-dir="-1"]::before { content: "←"; }
+	&[data-dir="1"]::before  { content: "→"; }
+
+	&:hover,
+	&:focus-visible {
+		background-color: var(--secondary-color);
 	}
-	
+
 	@media (max-width: 768px), (hover: none) {
-	.slider-btn{
-			width:30px;
-			height:30px;
-		}
+		width: 30px;
+		height: 30px;
 	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.project-overlay { transition: none; }
+	.slider-track { scroll-behavior: auto; }
 }
