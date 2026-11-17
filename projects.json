@@ -19,7 +19,12 @@
 		"type": "Group Project",
 		"description": "The visual identity project was developed with the goal of conveying the core values of PAJE - protection, safety, and support - in a serious and positive manner, aligned with its commitment to guiding and transforming the lives of young people.",
 		"image": "assets/project_2.webp",
-		"images": ""
+		"images": [
+			"assets/project_2.webp",
+			"assets/project_2.webp",
+			"assets/project_2.webp",
+			"assets/project_2.webp"
+		]
 	},
 	{
 		"title": "Receio",
@@ -28,7 +33,11 @@
 		"type": "Individual Project",
 		"description": "Receio is a project in which an interaction with the word 'Apprehension', in portuguese 'Receio', was developed, based on the meaning of the word. The entire aesthetic of the interaction was also developed according to the word's meaning.",
 		"image": "assets/project_3.webp",
-		"images": ""
+		"images": [
+			"assets/project_3.webp",
+			"assets/project_3.webp",
+			"assets/project_3.webp"
+		]
 	},
 	{
 		"title": "Receio",
@@ -37,7 +46,11 @@
 		"type": "Individual Project",
 		"description": "Receio is a project in which an interaction with the word 'Apprehension', in portuguese 'Receio', was developed, based on the meaning of the word. The entire aesthetic of the interaction was also developed according to the word's meaning.",
 		"image": "assets/project_3.webp",
-		"images": ""
+		"images": [
+			"assets/project_3.webp",
+			"assets/project_3.webp",
+			"assets/project_3.webp"
+		]
 	},
 	{
 		"title": "Receio",
@@ -46,6 +59,10 @@
 		"type": "Individual Project",
 		"description": "Receio is a project in which an interaction with the word 'Apprehension', in portuguese 'Receio', was developed, based on the meaning of the word. The entire aesthetic of the interaction was also developed according to the word's meaning.",
 		"image": "assets/project_3.webp",
-		"images": ""
+		"images": [
+			"assets/project_3.webp",
+			"assets/project_3.webp",
+			"assets/project_3.webp"
+		]
 	}
 ]
