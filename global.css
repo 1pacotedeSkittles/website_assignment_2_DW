@@ -157,6 +157,7 @@ body:has(.portfolio-title a:hover) #cursor-fly {
 
 		&:hover,
 		&:focus-visible {
+			cursor: default;
 			color: var(--secondary-color);
 		}
 	}

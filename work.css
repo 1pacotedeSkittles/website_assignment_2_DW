@@ -29,6 +29,7 @@
 }
 
 .project-overlay a{
+	cursor: default;
 	color: var(--background-color);
 	font-family: var(--font-text);
 	text-transform: uppercase;
