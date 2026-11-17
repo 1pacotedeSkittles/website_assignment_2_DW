@@ -51,17 +51,7 @@ body:has(.portfolio-title a:hover) #cursor-fly {
 	color: var(--secondary-color);
 }
 
-.page-work .page-nav ul li:nth-child(1) a{
-	color: var(--secondary-color);
-}
-
-.page-aboutMe .page-nav ul li:nth-child(2) a{
-	color: var(--secondary-color);
-}
-
-.page-contactMe .page-nav ul li:nth-child(3) a{
-	color: var(--secondary-color);
-}
+.page-nav a[aria-current="page"] { color: var(--secondary-color); }
 
 .portfolio-title a{
 	cursor:none;
