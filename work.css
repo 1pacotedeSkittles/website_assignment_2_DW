@@ -153,10 +153,15 @@
 	}
 
 	.project-dialog {
-	width: max(70vw);
+	width: max(50vw);
 	padding: 2rem;
 	background: color-mix(in srgb, var(--background-color) 90%, transparent);;
 	color: var(--primary-color);
 	border:none;
-}
+	}
+
+	.slider-btn{
+		width:30px;
+		height:30px;
+	}
 }
