@@ -3,7 +3,7 @@ fly.src = 'assets/fly.webp';
 fly.id = 'cursor-fly';
 fly.alt = '';
 fly.setAttribute('aria-hidden', 'true');
-document.body.appendChild(fly);
+document.body.append(fly);
 
 window.addEventListener('mousemove', (e) => {
 	fly.style.left = `${e.clientX}px`;
