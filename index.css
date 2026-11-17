@@ -5,53 +5,58 @@
 	justify-content: center;
 	align-items: center;
 	font-family: var(--font-title-navbar);
+
+	.portfolio-label,
+	.portfolio-title {
+		margin: 0;
+	}
+
+	.portfolio-label {
+		font-size: var(--text-small);
+		font-weight: var(--weight-regular);
+		letter-spacing: var(--tracking-wide);
+		margin-bottom: 0.5rem;
+		text-align: center;
+		color:var(--primary-color);
+	}
+
+	.portfolio-title a {
+		display: inline-block;
+		font-size: var(--text-title);
+		font-weight: var(--weight-bold);
+		letter-spacing: var(--tracking-tight);
+		text-decoration: none;
+		text-align: center;
+		width: fit-content;
+		animation: 
+				pulse 2.5s ease-in-out infinite,
+				color-cycle 2.5s linear infinite;
+	}
 }
 
-.portfolio-label,
-.portfolio-title {
-	margin: 0;
-}
+.index-nav{
+	ul {
+		margin-top: 60px;
+		display: flex;
+		list-style: none;
+		padding: 0;
 
-.portfolio-label {
-	font-size: var(--text-small);
-	font-weight: var(--weight-regular);
-	letter-spacing: var(--tracking-wide);
-	margin-bottom: 0.5rem;
-	text-align: center;
-	color:var(--primary-color);
-}
+	}
 
-.portfolio-title a {
-	display: inline-block;
-	font-size: var(--text-title);
-	font-weight: var(--weight-bold);
-	letter-spacing: var(--tracking-tight);
-	text-decoration: none;
-	text-align: center;
-	width: fit-content;
-	animation: 
-			pulse 2.5s ease-in-out infinite,
-			color-cycle 2.5s linear infinite;
-}
-
-.index-nav ul {
-	margin-top: 60px;
-	display: flex;
-	list-style: none;
-	padding: 0;
-}
-
-.index-nav a {
-	margin: 20px;
-	text-decoration: none;
-	text-transform: lowercase;
-	font-weight: var(weight-light);
-	color: var(--primary-color);
-}
-
-.index-nav a:hover{
-	cursor: default;
-	color: var(--secondary-color);
+	a{
+		margin: 20px;
+		text-decoration: none;
+		text-transform: lowercase;
+		font-weight: var(--weight-light);
+		color: var(--primary-color);
+		&:hover{
+			cursor: default;
+			color: var(--secondary-color);
+		}
+		&:focus-visible {
+			color: var(--secondary-color);
+		}
+	}
 }
 
 @keyframes pulse {
@@ -62,4 +67,9 @@
 @keyframes color-cycle {
 	0%, 100%{ color: var(--primary-color); }
 	50% { color: var(--secondary-color); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.hero-home .portfolio-title a { animation: none; }
+	.index-nav a { transition: none; }
 }
