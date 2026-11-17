@@ -4,8 +4,6 @@ Personal portfolio of Diogo, a Design and Multimedia graduate from the Universit
 
 Built with plain HTML, CSS and JavaScript, with no third-party libraries, for the Web Development course (MDM, University of Coimbra).
 
-**Repository:** https://github.com/1pacotedeSkittles/website_assignment_2_DW
-
 **Live site:** https://1pacotedeskittles.github.io/website_assignment_2_DW/
 
 ## Requirements covered
